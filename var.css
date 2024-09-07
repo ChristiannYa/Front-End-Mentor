@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    /* Colors */
+    --pricing-num: #C73B0F;
+    --check-mrk: #1EA575;
+
+    --prm-acc-1: #FCF8F6;
+    --prm-acc-2: #F5EEEC;
+    --prm-acc-3: #CAAFA7;
+    --prm-acc-4: #AD8A85;
+    --prm-acc-5: #87635A;
+    --prm-acc-6: #260F08;
+
+    /* Font styling */
+    --ff-primary: "Red Hat Display", sans-serif;
+
+    --fs-1: 0.875rem;
+    --fs-2: 1rem;
+    --fs-3: 1.5rem;
+    --fs-4: 3.5rem;
+
+    --fw-1: 400;
+    --fw-2: 600;
+    --fw-3: 700;
+
+    /* Spacing */
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-5: 1.5rem;
+    --sp-5: 2rem;
+    --sp-6: 2.5rem;
+    --sp-7: 5.5rem;
+}
