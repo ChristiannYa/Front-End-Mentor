@@ -44,16 +44,30 @@ body {
     border-radius: 10px;
 }
 
-.cart-btn {
-    background-color: white;
+/* Buttons */
+.cart-btn,
+.cart-btn-click {
+    border-color: transparent;
+    color: white;
 
-    max-width: 10rem;
+    width: 10rem;
     padding: 0.75rem;
     border-radius: 20px;
 
-    display: flex;
     position: absolute;
-    bottom: -25px;
+    bottom: -1.5rem;
+}
+
+/* ------------------------------------ */
+
+/* Non-Clicked Cart Button */
+.cart-btn {
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+
+    /* visibility: hidden; */
 }
 
 .cart-btn img {
@@ -66,9 +80,23 @@ body {
     margin-left: var(--sp-1);
 }
 
-.item-ctg {
-    color: var(--prm-acc-5);
+/* ------------------------------------ */
+
+/* Clicked Cart Button */
+.cart-btn-click {
+    background-color: var(--pricing-num);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    visibility: hidden;
 }
+
+.cart-btn-click div {
+    padding: 0 var(--sp-6);
+}
+
+/* ------------------------------------ */
 
 .item-name {
     margin: var(--sp-1) 0;
