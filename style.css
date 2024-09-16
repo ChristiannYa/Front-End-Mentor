@@ -45,15 +45,17 @@ body {
 }
 
 .cart-btn {
-    background-color: white;
-
-    max-width: 10rem;
-    padding: 0.75rem;
+    background-color: vra(--df-clr-1);
     border-radius: 20px;
 
+    width: 10rem;
+    max-height: 45px;
+    padding: 0.75rem;
+    bottom: -25px;
+
+    justify-content: center;
     display: flex;
     position: absolute;
-    bottom: -25px;
 }
 
 .cart-btn img {
@@ -78,9 +80,9 @@ body {
     color: var(--pricing-num);
 }
 
-/* Cart Display: Empty Cart */
+/* Cart Display: Default Cart */
 .cart-selection-wrapper {
-    background-color: white;
+    background-color: var(--df-clr-1);
 
     width: calc(var(--sp-7) * 7);
     margin-left: var(--sp-5);
@@ -104,6 +106,62 @@ body {
 
     margin-top: var(--sp-2);
     text-align: center;
+}
+
+.items-container {
+    display: none;
+}
+
+/* Cart Display: Active Cart */
+.active {
+    background-color: var(--pricing-num);
+    border-color: transparent;
+    color: var(--df-clr-1);
+    font-family: var(--ff-primary);
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+.miniBtn {
+    border: solid 1px var(--df-clr-1);
+    border-radius: 100px;
+
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+}
+
+.delete-item-btn {
+    border: solid 1px var(--prm-acc-3);
+    border-radius: 100px;
+
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+}
+
+.confirm-order {
+    background-color: var(--pricing-num);
+    border-color: transparent;
+    border-radius: 20px;
+    color: var(--df-clr-1);
+
+    width: 100%;
+
+    padding: .5rem 0;
+}
+
+.miniBtn:hover {
+    cursor: pointer;
+}
+
+.delete-item-btn:hover {
+    cursor: pointer;
+}
+
+.confirm-order:hover {
+    cursor: pointer;
 }
 
 /* Text Presets */
