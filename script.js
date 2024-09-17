@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Added Code
+    let totalQuantity = 0;
+    const cartTotalQuantityElement = document.getElementById('cart-total-quantity');
+
+    function updateTotalQuantity(change) {
+        totalQuantity = Math.max(0, totalQuantity + change);
+        cartTotalQuantityElement.textContent = `(${totalQuantity})`;
+    }
+    // 
+
     function addItemToCart(button, itemName, itemPrice) {
         button.classList.add('active');
         button.innerHTML = `
@@ -51,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.querySelector('.increase').addEventListener('click', (e) => updateItemQuantity(button, itemName, itemPrice, 1, e));
         cartItem.querySelector('.delete-item-btn').addEventListener('click', () => removeItemFromCart(button, cartItem));
 
+        updateTotalQuantity(1); // Added Code
         updateTotalPrice(itemPrice);
     }
 
@@ -61,27 +72,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let quantity = parseInt(quantityElement.textContent);
 
         if (change !== 0) {
-            quantity += change;
-        }
-
-        if (quantity > 0) {
-            quantityElement.textContent = quantity;
-            const cartItem = Array.from(itemsContainer.children).find(item => item.querySelector('.item-name').textContent === itemName);
-            cartItem.querySelector('.item-quantity').textContent = `x${quantity}`;
-            cartItem.querySelector('.item-total').textContent = `$${(itemPrice * quantity).toFixed(2)}`;
-
-            updateTotalPrice(itemPrice * change);
-        } else {
-            removeItemFromCart(button, Array.from(itemsContainer.children).find(item => item.querySelector('.item-name').textContent === itemName));
+            if (quantity + change >= 1) {
+                quantity += change;
+                updateTotalQuantity(change);
+                quantityElement.textContent = quantity;
+                const cartItem = Array.from(itemsContainer.children).find(item => item.querySelector('.item-name').textContent === itemName);
+                cartItem.querySelector('.item-quantity').textContent = `x${quantity}`;
+                cartItem.querySelector('.item-total').textContent = `$${(itemPrice * quantity).toFixed(2)}`;
+                updateTotalPrice(itemPrice * change);
+            } else {
+                removeItemFromCart(button, Array.from(itemsContainer.children).find(item => item.querySelector('.item-name').textContent === itemName));
+            }
         }
     }
 
     function removeItemFromCart(button, cartItem) {
         button.classList.remove('active');
         button.innerHTML = `
-        <img src="assets/images/icon-add-to-cart.svg" alt="shopping cart icon">
-        <p class="text-preset-4b">Add to Cart</p>
-      `;
+            <img src="assets/images/icon-add-to-cart.svg" alt="shopping cart icon">
+            <p class="text-preset-4b">Add to Cart</p>
+        `;
+
+        const quantity = parseInt(cartItem.querySelector('.item-quantity').textContent.replace('x', ''));
+        updateTotalQuantity(-quantity);
 
         const itemTotal = parseFloat(cartItem.querySelector('.item-total').textContent.replace('$', ''));
         updateTotalPrice(-itemTotal);
