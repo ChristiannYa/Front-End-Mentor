@@ -180,6 +180,32 @@ body {
     display: inline-block;
 }
 
+/* Bottom Order Section */
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.delivery-info span {
+    background-color: var(--prm-acc-1);
+    border-radius: .5rem;
+
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    gap: .5rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.tree-img {
+    display: inline-block;
+}
+
 .confirm-order {
     background-color: var(--pricing-num);
     border-color: transparent;

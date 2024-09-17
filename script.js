@@ -108,13 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 totalPriceElement.classList.add('total-price');
                 cartSelectionWrapper.appendChild(totalPriceElement);
             }
-            totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
-            totalPriceElement.style.display = 'block';
+            totalPriceElement.innerHTML = `<span class="text-preset-4">Order total:</span><span class="text-preset-2">$${totalPrice.toFixed(2)}</span>`;
+            totalPriceElement.style.display = 'flex';
 
             if (!deliveryInfo) {
                 deliveryInfo = document.createElement('div');
                 deliveryInfo.classList.add('delivery-info');
-                deliveryInfo.textContent = 'This is a natural delivery';
+                deliveryInfo.innerHTML = `<span class="text-preset-4">
+                                            <img src="assets/images/icon-carbon-neutral.svg" class="tree-img" alt="tree image">
+                                            This is a <b>carbon-neutral</b> delivery
+                                        </span>`;
                 cartSelectionWrapper.appendChild(deliveryInfo);
             }
 
