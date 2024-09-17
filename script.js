@@ -33,11 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-        <span class="item-name">${itemName}</span>
-        <span class="item-price">$${itemPrice.toFixed(2)}</span>
-        <span class="item-quantity">x1</span>
-        <span class="item-total">$${itemPrice.toFixed(2)}</span>
+        <span class="item-name text-preset-4b">${itemName}</span>
+
+        <div class="item-name-info">
+        <span class="item-quantity text-preset-4b">x1</span>
+        <span class="item-price text-preset-4">@${itemPrice.toFixed(2)}</span>
+        <span class="item-total text-preset-4b">$${itemPrice.toFixed(2)}</span>
         <img src="assets/images/icon-remove-item.svg" alt="Delete" class="delete-item-btn">
+        </div>
       `;
 
         itemsContainer.appendChild(cartItem);

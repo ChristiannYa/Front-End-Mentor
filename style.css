@@ -132,13 +132,52 @@ body {
     padding: 4px;
 }
 
+/* Items on Cart Info */
+.cart-item {
+    border-bottom: solid 1px var(--prm-acc-2);
+
+    padding: 1rem 0;
+}
+
+.item-name {
+    color: var(--prm-acc-6);
+}
+
+.item-name-info {
+    font-family: var(--ff-primary);
+
+    gap: 8px;
+
+    display: flex;
+    align-items: center;
+}
+
+.item-quantity {
+    color: var(--pricing-num);
+}
+
+.item-name-info .item-price {
+    margin-left: .2rem;
+}
+
+.item-price,
+.item-total {
+    color: var(--prm-acc-5);
+}
+
+.item-name-info img {
+    margin-left: auto;
+}
+
 .delete-item-btn {
-    border: solid 1px var(--prm-acc-3);
+    border: solid 1px var(--prm-acc-4);
     border-radius: 100px;
 
     width: 20px;
     height: 20px;
     padding: 3px;
+
+    display: inline-block;
 }
 
 .confirm-order {
@@ -150,6 +189,15 @@ body {
     width: 100%;
 
     padding: .5rem 0;
+}
+
+/* Hover on Buttons */
+.cart-btn:hover {
+    cursor: pointer;
+}
+
+.active:hover {
+    cursor: auto;
 }
 
 .miniBtn:hover {
@@ -203,7 +251,7 @@ body {
 .text-preset-4b {
     font-family: var(--ff-primary);
     font-size: var(--fs-1);
-    font-weight: var(--fw-2);
+    font-weight: var(--fw-3);
 
     letter-spacing: 0;
     line-height: 150%;
